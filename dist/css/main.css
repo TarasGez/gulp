@@ -1,0 +1,20 @@
+body p {
+  color: #1eb2ff; }
+
+body input::-webkit-input-placeholder {
+  color: gray; }
+
+body input::-moz-placeholder {
+  color: gray; }
+
+body input:-ms-input-placeholder {
+  color: gray; }
+
+body input::-ms-input-placeholder {
+  color: gray; }
+
+body input::placeholder {
+  color: gray; }
+
+body a {
+  color: white; }
