@@ -9,9 +9,9 @@ const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 // IMG
-const imagemin = require('gulp-imagemin');
-const imageminPngquant = require('imagemin-pngquant');
-const cache = require('gulp-cache');
+// const imagemin = require('gulp-imagemin');
+// const imageminPngquant = require('imagemin-pngquant');
+// const cache = require('gulp-cache');
 // Browser Sync
 const browserSync = require('browser-sync').create();
 // Deploy
@@ -28,13 +28,6 @@ gulp.task("html", (done) => {
 
 gulp.task("images", (done) => {
     gulp.src("./src/img/**/*")
-        .pipe(cache(
-            imagemin(
-            [
-                imageminPngquant({quality: [0.3, 0.5]})
-            ]
-        )
-        ))
         .pipe(gulp.dest("./dist/img"));
     done();
 });
@@ -67,11 +60,12 @@ gulp.task("browser-init", (done) => {
     done();
 });
 
-gulp.task("watch", (done) => {
+gulp.task("watch", () => {
     gulp.watch("./src/*.html", gulp.series("html"));
     gulp.watch("./src/scss/**/*.scss", gulp.series("scss"));
     gulp.watch("./src/js/**/*.js", gulp.series("js"));
     // gulp.watch("./src/img/**/*", gulp.series("images"));
+    return;
 });
 
 gulp.task("clean", (done) => {
