@@ -1,1 +1,0 @@
-"use strict";var abc="abc 123";console.log("main"),console.log("main",abc),console.log("main"),console.log("main");abc="ABC";console.log("other",abc);
