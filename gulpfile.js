@@ -60,12 +60,12 @@ gulp.task("browser-init", (done) => {
     done();
 });
 
-gulp.task("watch", () => {
+gulp.task("watch", (done) => {
     gulp.watch("./src/*.html", gulp.series("html"));
     gulp.watch("./src/scss/**/*.scss", gulp.series("scss"));
     gulp.watch("./src/js/**/*.js", gulp.series("js"));
     // gulp.watch("./src/img/**/*", gulp.series("images"));
-    return;
+    done();
 });
 
 gulp.task("clean", (done) => {
